@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.sass']
 })
 export class NavbarComponent implements OnInit {
-
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  hasValidSession(): boolean {
+    return !!sessionStorage.getItem('session')
   }
 
 }
