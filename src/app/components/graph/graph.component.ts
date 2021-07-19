@@ -3,25 +3,6 @@ import { Observable } from 'rxjs';
 import { GraphComponentService } from './graph.component.service';
 import { GraphType } from './graph.interface';
 
-
-// interface GraphOptionsObject {
-//   legend?: boolean
-//   showLabels?: boolean
-//   animations?: boolean
-//   xAxis?: boolean
-//   yAxis?: boolean
-//   showYAxisLabel?: boolean
-//   showXAxisLabel?: boolean
-//   xAxisLabel?: string
-//   yAxisLabel?: string
-//   timeline?: boolean
-//   colorScheme?: {[key: string]: Array<string>}
-//   showXAxis?: boolean
-//   showYAxis?: boolean
-//   gradient?: boolean
-//   showLegend?:boolean
-// }
-
 interface GraphObject {
   options: any,
   data$: Observable<any>,
