@@ -1,48 +1,55 @@
 
 
-<div class='graph-header text-secondary text-end rounded px-3 d-flex justify-content-end align-items-center' >
-  <i class="graph-icons fas fa-chart-bar me-2"></i>
-  <a class='graph-toggle text-primary' href='#' (click)='$event.preventDefault(); switchGraph()'>
-    <i [class.toggle-off]='currentGraphIndex' class="fas fa-toggle-on"></i>
-  </a>
-  <i class="graph-icons fas fa-chart-line ms-2"></i>
-</div>
+<div class='bg-light shadow-sm rounded'>
+  <div class='graph-header text-secondary text-end rounded px-3 d-flex justify-content-between align-items-center'>
+    <div>
+      <span class='text-capitalize'>{{graphsObject[currentGraphIndex].type}} Graph</span>
+    </div>
+    <div class='d-flex align-items-center'>
+      <i class="graph-icons fas fa-chart-bar me-2"></i>
+      <a class='graph-toggle text-primary' href='#' (click)='$event.preventDefault(); switchGraph()'>
+        <i [class.toggle-off]='currentGraphIndex' class="fas fa-toggle-on"></i>
+      </a>
+      <i class="graph-icons fas fa-chart-line ms-2"></i>
+    </div>
+  </div>
 
-<div class='grid-area d-grid' style='height: 500px'>
-  <ng-container [ngSwitch]='graphsObject[currentGraphIndex].type'>
+  <div class='grid-area d-grid' style='height: 500px'>
+    <ng-container [ngSwitch]='graphsObject[currentGraphIndex].type'>
 
-    <ng-container *ngSwitchCase='graphTypes.BAR'>
-      <ngx-charts-bar-vertical-2d
-        [results]="(graphsObject[currentGraphIndex].data$ | async)"
-        [legendTitle]="graphsObject[currentGraphIndex].options.legendTitle"
-        [scheme]="graphsObject[currentGraphIndex].options.colorScheme"
-        [gradient]="graphsObject[currentGraphIndex].options.gradient"
-        [xAxis]="graphsObject[currentGraphIndex].options.showXAxis"
-        [yAxis]="graphsObject[currentGraphIndex].options.showYAxis"
-        [legend]="graphsObject[currentGraphIndex].options.showLegend"
-        [showXAxisLabel]="graphsObject[currentGraphIndex].options.showXAxisLabel"
-        [showYAxisLabel]="graphsObject[currentGraphIndex].options.showYAxisLabel"
-        [xAxisLabel]="graphsObject[currentGraphIndex].options.xAxisLabel"
-        [yAxisLabel]="graphsObject[currentGraphIndex].options.yAxisLabel"
-      ></ngx-charts-bar-vertical-2d>
-    </ng-container>
+      <ng-container *ngSwitchCase='graphTypes.BAR'>
+        <ngx-charts-bar-vertical-2d
+          [results]="(graphsObject[currentGraphIndex].data$ | async)"
+          [legendTitle]="graphsObject[currentGraphIndex].options.legendTitle"
+          [scheme]="graphsObject[currentGraphIndex].options.colorScheme"
+          [gradient]="graphsObject[currentGraphIndex].options.gradient"
+          [xAxis]="graphsObject[currentGraphIndex].options.showXAxis"
+          [yAxis]="graphsObject[currentGraphIndex].options.showYAxis"
+          [legend]="graphsObject[currentGraphIndex].options.showLegend"
+          [showXAxisLabel]="graphsObject[currentGraphIndex].options.showXAxisLabel"
+          [showYAxisLabel]="graphsObject[currentGraphIndex].options.showYAxisLabel"
+          [xAxisLabel]="graphsObject[currentGraphIndex].options.xAxisLabel"
+          [yAxisLabel]="graphsObject[currentGraphIndex].options.yAxisLabel"
+        ></ngx-charts-bar-vertical-2d>
+      </ng-container>
 
-    <ng-container *ngSwitchDefault>
-      <ngx-charts-line-chart
-        [results]="(graphsObject[currentGraphIndex].data$ | async)"
-        [scheme]="graphsObject[currentGraphIndex].options.colorScheme"
-        [legend]="graphsObject[currentGraphIndex].options.legend"
-        [showXAxisLabel]="graphsObject[currentGraphIndex].options.showXAxisLabel"
-        [showYAxisLabel]="graphsObject[currentGraphIndex].options.showYAxisLabel"
-        [xAxis]="graphsObject[currentGraphIndex].options.xAxis"
-        [yAxis]="graphsObject[currentGraphIndex].options.yAxis"
-        [xAxisLabel]="graphsObject[currentGraphIndex].options.xAxisLabel"
-        [yAxisLabel]="graphsObject[currentGraphIndex].options.yAxisLabel"
-        [timeline]="graphsObject[currentGraphIndex].options.timeline"
-      ></ngx-charts-line-chart>
+      <ng-container *ngSwitchDefault>
+        <ngx-charts-line-chart
+          [results]="(graphsObject[currentGraphIndex].data$ | async)"
+          [scheme]="graphsObject[currentGraphIndex].options.colorScheme"
+          [legend]="graphsObject[currentGraphIndex].options.legend"
+          [showXAxisLabel]="graphsObject[currentGraphIndex].options.showXAxisLabel"
+          [showYAxisLabel]="graphsObject[currentGraphIndex].options.showYAxisLabel"
+          [xAxis]="graphsObject[currentGraphIndex].options.xAxis"
+          [yAxis]="graphsObject[currentGraphIndex].options.yAxis"
+          [xAxisLabel]="graphsObject[currentGraphIndex].options.xAxisLabel"
+          [yAxisLabel]="graphsObject[currentGraphIndex].options.yAxisLabel"
+          [timeline]="graphsObject[currentGraphIndex].options.timeline"
+        ></ngx-charts-line-chart>
 
-    </ng-container>
-  </ng-container> 
+      </ng-container>
+    </ng-container> 
+  </div>
 </div>
 <div class='mt-3 text-secondary'>
   <h2>Lorem ipsum</h2>
