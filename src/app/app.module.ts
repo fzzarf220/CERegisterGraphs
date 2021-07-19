@@ -10,6 +10,8 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
     RegisterPageComponent,
     NavbarComponent,
     LoginComponent,
-    LoginPageComponent
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxChartsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,49 @@
-<p>graph works!</p>
+
+
+<div class='text-secondary text-end bg-light rounded px-3'>
+  <i class="fas fa-chart-bar"></i>
+  &nbsp;
+  <a class='h4 d-inline-block text-secondary' href='#' (click)='$event.preventDefault(); switchGraph()'>
+    <i *ngIf='currentGraphIndex == 0' class="fas fa-toggle-on"></i>
+    <i *ngIf='currentGraphIndex == 1' class="fas fa-toggle-off"></i>
+  </a>
+  &nbsp;
+  <i class="fas fa-chart-line"></i>
+</div>
+
+<div class='grid-area d-grid' style='height: 500px'>
+  <ng-container [ngSwitch]='graphsObject[currentGraphIndex].type'>
+
+    <ng-container *ngSwitchCase='"bar"'>
+      <ngx-charts-bar-vertical-2d
+        [results]="(graphsObject[currentGraphIndex].data$ | async)"
+        [legendTitle]="graphsObject[currentGraphIndex].options.legendTitle"
+        [scheme]="graphsObject[currentGraphIndex].options.colorScheme"
+        [gradient]="graphsObject[currentGraphIndex].options.gradient"
+        [xAxis]="graphsObject[currentGraphIndex].options.showXAxis"
+        [yAxis]="graphsObject[currentGraphIndex].options.showYAxis"
+        [legend]="graphsObject[currentGraphIndex].options.showLegend"
+        [showXAxisLabel]="graphsObject[currentGraphIndex].options.showXAxisLabel"
+        [showYAxisLabel]="graphsObject[currentGraphIndex].options.showYAxisLabel"
+        [xAxisLabel]="graphsObject[currentGraphIndex].options.xAxisLabel"
+        [yAxisLabel]="graphsObject[currentGraphIndex].options.yAxisLabel"
+      ></ngx-charts-bar-vertical-2d>
+    </ng-container>
+
+    <ng-container *ngSwitchDefault>
+      <ngx-charts-line-chart
+        [results]="(graphsObject[currentGraphIndex].data$ | async)"
+        [scheme]="graphsObject[currentGraphIndex].options.colorScheme"
+        [legend]="graphsObject[currentGraphIndex].options.legend"
+        [showXAxisLabel]="graphsObject[currentGraphIndex].options.showXAxisLabel"
+        [showYAxisLabel]="graphsObject[currentGraphIndex].options.showYAxisLabel"
+        [xAxis]="graphsObject[currentGraphIndex].options.xAxis"
+        [yAxis]="graphsObject[currentGraphIndex].options.yAxis"
+        [xAxisLabel]="graphsObject[currentGraphIndex].options.xAxisLabel"
+        [yAxisLabel]="graphsObject[currentGraphIndex].options.yAxisLabel"
+        [timeline]="graphsObject[currentGraphIndex].options.timeline"
+      ></ngx-charts-line-chart>
+
+    </ng-container>
+  </ng-container> 
+</div>
