@@ -51,7 +51,7 @@ export class GraphComponent implements OnInit {
         timeline: true,
 
         colorScheme: {
-          domain: ['#9670f7', '#5806fc', '#9227e9', '#53d2e5']
+          domain: ['#9670f7', '#9227e9', '#5806fc', '#53d2e5']
         }
       },
       data$: this.componentService.getData(GraphType.LINE)
@@ -69,7 +69,7 @@ export class GraphComponent implements OnInit {
         yAxisLabel: 'Value',
         legendTitle: 'Date',
         colorScheme: {
-          domain: ['#9670f7', '#5806fc', '#9227e9', '#53d2e5']
+          domain: ['#9670f7', '#9227e9', '#5806fc', '#53d2e5']
         }
       },
       data$: this.componentService.getData(GraphType.BAR),

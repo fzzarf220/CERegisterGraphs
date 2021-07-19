@@ -1,14 +1,11 @@
 
 
-<div class='text-secondary text-end bg-light rounded px-3'>
-  <i class="fas fa-chart-bar"></i>
-  &nbsp;
-  <a class='h4 d-inline-block text-secondary' href='#' (click)='$event.preventDefault(); switchGraph()'>
-    <i *ngIf='currentGraphIndex == 0' class="fas fa-toggle-on"></i>
-    <i *ngIf='currentGraphIndex == 1' class="fas fa-toggle-off"></i>
+<div class='graph-header text-secondary text-end rounded px-3 d-flex justify-content-end align-items-center' >
+  <i class="graph-icons fas fa-chart-bar me-2"></i>
+  <a class='graph-toggle text-primary' href='#' (click)='$event.preventDefault(); switchGraph()'>
+    <i [class.toggle-off]='currentGraphIndex' class="fas fa-toggle-on"></i>
   </a>
-  &nbsp;
-  <i class="fas fa-chart-line"></i>
+  <i class="graph-icons fas fa-chart-line ms-2"></i>
 </div>
 
 <div class='grid-area d-grid' style='height: 500px'>
