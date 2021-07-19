@@ -14,7 +14,7 @@
 <div class='grid-area d-grid' style='height: 500px'>
   <ng-container [ngSwitch]='graphsObject[currentGraphIndex].type'>
 
-    <ng-container *ngSwitchCase='"bar"'>
+    <ng-container *ngSwitchCase='graphTypes.BAR'>
       <ngx-charts-bar-vertical-2d
         [results]="(graphsObject[currentGraphIndex].data$ | async)"
         [legendTitle]="graphsObject[currentGraphIndex].options.legendTitle"
@@ -46,4 +46,12 @@
 
     </ng-container>
   </ng-container> 
+</div>
+<div class='mt-3 text-secondary'>
+  <h2>Lorem ipsum</h2>
+  <p>Ullamco elit quis in qui mollit. Voluptate anim incididunt adipisicing Lorem et ad occaecat mollit nisi. Cillum nostrud eu sit sint aute enim. Excepteur excepteur voluptate occaecat et aute cupidatat labore sit. Tempor occaecat exercitation reprehenderit et labore cupidatat ipsum mollit minim sint et eiusmod nulla sint. Mollit incididunt ipsum Lorem fugiat labore esse voluptate exercitation voluptate labore incididunt.</p>
+
+  <p>Voluptate proident incididunt id irure id incididunt laboris consequat enim in deserunt. Pariatur sint sint fugiat ea elit incididunt incididunt et labore ipsum enim consectetur ad magna. In cillum enim enim esse labore commodo ad culpa in veniam cupidatat occaecat. Irure ex ex mollit velit consequat. Incididunt excepteur pariatur cillum consectetur dolore aliqua do laboris do. Laboris excepteur aute nisi amet non nostrud mollit. Enim quis eiusmod occaecat nisi ex excepteur consectetur sit esse tempor labore ex.</p>
+
+  <p>Dolor culpa nisi mollit duis ad et dolore sint consequat cupidatat consequat. Dolore consectetur reprehenderit ut irure. Anim officia fugiat excepteur nisi exercitation aliquip qui ullamco anim enim aute sunt culpa.</p>
 </div>

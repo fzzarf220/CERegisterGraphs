@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
-import { EMPTY, Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { GraphComponentService } from './graph.component.service';
+import { GraphType } from './graph.interface';
 
 
 // interface GraphOptionsObject {
@@ -24,7 +25,7 @@ import { GraphComponentService } from './graph.component.service';
 interface GraphObject {
   options: any,
   data$: Observable<any>,
-  type: 'bar' | 'line',
+  type: GraphType
 }
 
 @Component({
@@ -33,9 +34,10 @@ interface GraphObject {
   styleUrls: ['./graph.component.sass']
 })
 export class GraphComponent implements OnInit {
+  graphTypes: typeof GraphType = GraphType
   graphsObject: Array<GraphObject> = [
     {
-      type: 'line',
+      type: GraphType.LINE,
       options: {
         legend: true,
         showLabels: true,
@@ -49,13 +51,13 @@ export class GraphComponent implements OnInit {
         timeline: true,
 
         colorScheme: {
-          domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
+          domain: ['#9670f7', '#5806fc', '#9227e9', '#53d2e5']
         }
       },
-      data$: this.componentService.getData()
+      data$: this.componentService.getData(GraphType.LINE)
     },
     {
-      type: 'bar',
+      type: GraphType.BAR,
       options: {
         showXAxis: true,
         showYAxis: true,
@@ -67,10 +69,10 @@ export class GraphComponent implements OnInit {
         yAxisLabel: 'Value',
         legendTitle: 'Date',
         colorScheme: {
-          domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+          domain: ['#9670f7', '#5806fc', '#9227e9', '#53d2e5']
         }
       },
-      data$: this.componentService.getData(),
+      data$: this.componentService.getData(GraphType.BAR),
     },
   ]
   currentGraphIndex: number = 0
