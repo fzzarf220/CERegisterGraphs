@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core'
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {debounceTime, tap} from 'rxjs/operators'
-import { SessionService } from 'src/app/services/session.service';
-import { UsersService } from 'src/app/services/users.service';
+import { SessionService } from '../../../app/services/session.service';
+import { UsersService } from '../../../app/services/users.service';
 
 @Component({
   selector: 'app-register',
