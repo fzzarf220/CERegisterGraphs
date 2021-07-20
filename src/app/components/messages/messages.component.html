@@ -1,0 +1,6 @@
+<div class="alert alert-success alert-dismissible fade show" *ngIf='(messages$ | async).length'>
+	<button type="button" class="btn-close" (click)='clearMessages()'></button>
+	<ng-container *ngFor='let message of (messages$ | async)'>
+		<div class='text'>{{message}}</div>
+	</ng-container>
+</div>

@@ -70,6 +70,5 @@ export class GraphComponent implements OnInit {
   }
 
   onSelect(event: any) {
-    console.log(event);
   }
 }

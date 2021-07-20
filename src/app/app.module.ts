@@ -13,6 +13,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { MessagesComponent } from './components/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     LoginComponent,
     LoginPageComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,

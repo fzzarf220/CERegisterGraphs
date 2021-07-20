@@ -105,9 +105,6 @@ export class GraphComponentService {
 				return acc
 			}, [] as DataGraphSeriesObject)
 
-		
-		console.log(data)
-
 		return of(data)
 	}
 
