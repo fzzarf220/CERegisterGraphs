@@ -1,27 +1,25 @@
-# CeRegisterGraphs
+# CeRegisterGraphs - AKA The Company
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
 
-## Development server
+## Prerequisite
+To run the application locally, please make sure you have the most current version of node and npm installed
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Follow the instructions on the nodejs.org site:
 
-## Code scaffolding
+`https://nodejs.org/en/download/`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Run Application
 
-## Build
+To run locally in dev mode, run the following commands in a bash terminal:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+	npm install
+	npm start
+```
 
-## Running unit tests
+After issuing the above command, go to the URL below to access the application:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`http://localhost:4200/`
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+NOTE: you will need to wait for the application to finish building before you can start using it
